@@ -1,0 +1,83 @@
+name: suva
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # a
+  analog_clock: ^0.0.4
+  animated_text_kit: ^4.2.1
+  advanced_icon: ^0.1.2
+
+  # b
+  bordered_text: ^2.0.0
+  blobs: ^2.0.0
+
+  # c
+  cupertino_icons: ^1.0.2
+  concentric_transition: ^1.0.1+1
+
+  # d
+  delayed_display: ^2.0.0
+
+  # f
+  fancy_cursor: ^0.1.2
+  font_awesome_flutter: ^9.2.0
+
+  # g
+  glass_kit: ^2.0.1
+
+  # h
+  hovering: ^1.0.4
+
+  # m
+  marquee: ^2.2.0
+
+  # l
+  linked_scroll_controller: ^0.2.0
+  linear_gradient: ^0.1.12
+
+  # p
+  provider: ^6.0.1
+
+  # s
+  splash_tap: ^0.1.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+      - assets/images/
+
+  fonts:
+      - family: EBGaramond
+        fonts:
+          - asset: assets/fonts/EBGaramond.ttf
+      - family: Urbanist
+        fonts:
+          - asset: assets/fonts/Urbanist-Regular.ttf
+          - asset: assets/fonts/Urbanist-Thin.ttf
+            weight: 100
+      - family: AbrilFatface
+        fonts:
+          - asset: assets/fonts/AbrilFatface-Regular.ttf
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
