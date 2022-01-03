@@ -32,7 +32,6 @@ class _ContactSectionState extends State<ContactSection> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -100,65 +99,6 @@ class _ContactSectionState extends State<ContactSection> {
                 Container(),
               ],
             ),
-          ),
-        ],
-      ),
-    );
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 45.0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                HoverDetector(
-                  builder: (isHovered) {
-                    return GestureDetector(
-                      onTap: () => sectionProvider.previousPage(),
-                      child: AnimatedContainer(
-                        alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 12.0),
-                        decoration: BoxDecoration(
-                          color: isHovered ? Colors.transparent : Colors.black,
-                          border: Border.all(
-                            color:
-                                isHovered ? Colors.black : Colors.transparent,
-                          ),
-                        ),
-                        duration: const Duration(milliseconds: 100),
-                        child: Text(
-                          'Projects / Back',
-                          style: TextStyle(
-                            color: isHovered ? Colors.black : Colors.white,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-                Container(),
-              ],
-            ),
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  color: Colors.grey,
-                  height: MediaQuery.of(context).size.width * 0.4,
-                ),
-              ),
-              const Expanded(
-                child: SectionLabel(
-                  label: 'Info',
-                  bigTextColor: Colors.white60,
-                ),
-              ),
-            ],
           ),
         ],
       ),
