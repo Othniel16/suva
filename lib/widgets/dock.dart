@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:suva/exports.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
 
 class Dock extends StatelessWidget {
   const Dock({Key? key}) : super(key: key);
@@ -68,35 +70,44 @@ class Dock extends StatelessWidget {
                         const SizedBox(width: 10.0),
                         DockItem(
                           label: 'Mail',
-                          onTap: () => provider.changeSection = 3,
+                          onTap: () async => await launchMailto(),
                           icon: const FaIcon(
                             FontAwesomeIcons.envelope,
                             color: Colors.grey,
                           ),
                         ),
                         const SizedBox(width: 8.0),
-                        const DockItem(
+                        DockItem(
                           label: 'Instagram',
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.instagram,
                             color: Colors.grey,
                           ),
+                          onTap: () {
+                            html.window.open(Urls.instagram, 'Instagram');
+                          },
                         ),
                         const SizedBox(width: 8.0),
-                        const DockItem(
+                        DockItem(
                           label: 'Twitter',
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.twitter,
                             color: Colors.grey,
                           ),
+                          onTap: () {
+                            html.window.open(Urls.twitter, 'Twitter');
+                          },
                         ),
                         const SizedBox(width: 8.0),
-                        const DockItem(
+                        DockItem(
                           label: 'GitHub',
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.github,
                             color: Colors.grey,
                           ),
+                          onTap: () {
+                            html.window.open(Urls.github, 'GitHub');
+                          },
                         ),
                         const SizedBox(width: 8.0),
                         const DockItem(
@@ -116,5 +127,10 @@ class Dock extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Future<void> launchMailto() async {
+    final mailtoLink = Mailto(to: ['othnielussher16@gmail.com']);
+    await launch('$mailtoLink');
   }
 }

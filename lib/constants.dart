@@ -15,7 +15,7 @@ class Strings {
 
 class Images {
   static const String imagesPath = 'assets/images/';
-  static const String hero = imagesPath + 'hero.jpg';
+  static const String about = imagesPath + 'about.jpg';
   static const String alicante = imagesPath + 'alicante.jpg';
   static const String darEsSalaam = imagesPath + 'darEsSalaam.jpg';
   static const String delhi = imagesPath + 'delhi.jpg';
@@ -27,6 +27,19 @@ class Images {
   static const String mumbai = imagesPath + 'mumbai.jpg';
 }
 
+class Svgs {
+  static const String svgsPath = 'assets/icons/';
+  static const String dart = svgsPath + 'dart.svg';
+  static const String firebase = svgsPath + 'firebase.svg';
+  static const String flutter = svgsPath + 'flutter.svg';
+  static const String git = svgsPath + 'git.svg';
+  static const String wizard = svgsPath + 'hat.svg';
+  static const String node = svgsPath + 'node-js.svg';
+  static const String python = svgsPath + 'python.svg';
+  static const String mongodb = svgsPath + 'mongodb.svg';
+  static const String mysql = svgsPath + 'mysql.svg';
+}
+
 class Palette {
   static const Color green = Color(0xFF2E8664);
   static const Color lightBlue = Color(0xFF0277bd);
@@ -36,4 +49,10 @@ class Palette {
   static const Color pink = Color(0xFFE57373);
   static const Color navyBlue = Color(0xFF000080);
   static const Color yellow = Color(0xFFF0D700);
+}
+
+class Urls {
+  static const String github = 'https://github.com/Othniel16';
+  static const String twitter = 'https://twitter.com/Cool_Oth';
+  static const String instagram = 'https://www.instagram.com/_ussher/';
 }

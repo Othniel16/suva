@@ -17,16 +17,4 @@ class SectionProvider extends ChangeNotifier {
     selectedSection = index;
     notifyListeners();
   }
-
-  void nextPage() {
-    pageController.nextPage(
-        duration: const Duration(milliseconds: 1500),
-        curve: Curves.easeOutSine);
-  }
-
-  void previousPage() {
-    pageController.previousPage(
-        duration: const Duration(milliseconds: 1500),
-        curve: Curves.easeOutSine);
-  }
 }
