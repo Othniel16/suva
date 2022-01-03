@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:suva/exports.dart';
 
@@ -59,9 +58,7 @@ class _HomeState extends State<Home> {
                 height: 80.0,
                 margin: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: AnimatedTextKit(
-                  pause: const Duration(milliseconds: 500),
                   repeatForever: true,
-                  isRepeatingAnimation: true,
                   animatedTexts: [
                     FadeAnimatedText('Portfolio, OTHNIEL USSHER',
                         textStyle: _textStyle),
@@ -84,26 +81,5 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
-
-    return Scaffold(
-      body: ConcentricPageView(
-        scaleFactor: 0.0,
-        verticalPosition: 1.2,
-        itemCount: sections.length,
-        direction: Axis.vertical,
-        pageSnapping: false,
-        duration: Duration.zero,
-        pageController: sectionProvider.pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        itemBuilder: (int index, double value) => sections[index],
-        colors: const [
-          Colors.white,
-          Palette.pink,
-          Palette.green,
-          Palette.yellow,
-        ],
-      ),
-    );
   }
 }
-
