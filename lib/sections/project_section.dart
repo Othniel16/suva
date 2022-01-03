@@ -22,27 +22,25 @@ class _ProjectSectionState extends State<ProjectSection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        child: Row(
-          children: [
-            const Expanded(flex: 2, child: SectionHeader('Projects')),
-            Expanded(
-              flex: 8,
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.05,
-                  vertical: size.height * 0.1,
-                ),
-                child: const DelayedDisplay(
-                  child: ProjectList(),
-                  slidingBeginOffset: Offset(0, 0),
-                  delay: Duration(milliseconds: 1300),
-                ),
+      body: Row(
+        children: [
+          const Expanded(flex: 2, child: SectionHeader('Projects')),
+          Expanded(
+            flex: 8,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.05,
+                vertical: size.height * 0.1,
+              ),
+              child: const DelayedDisplay(
+                child: ProjectList(),
+                slidingBeginOffset: Offset(0, 0),
+                delay: Duration(milliseconds: 1300),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
