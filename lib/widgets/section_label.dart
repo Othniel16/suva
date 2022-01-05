@@ -36,7 +36,9 @@ class SectionLabel extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 40.0,
-              color: smallTextColor,
+              color: ThemeProvider.themeOf(context).id == 'knight'
+                  ? Colors.white
+                  : smallTextColor,
               fontFamily: 'Urbanist',
               fontWeight: FontWeight.bold,
             ),
