@@ -15,12 +15,32 @@ class _AppState extends State<App> {
       providers: [
         ChangeNotifierProvider(create: (_) => SectionProvider()),
       ],
-      child: MaterialApp(
-        title: 'Project Suva',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(primarySwatch: Colors.blue),
-        scrollBehavior: const ScrollBehavior().copyWith(scrollbars: false),
-        home: const ProgressBar(),
+      child: ThemeProvider(
+        themes: [
+          AppTheme.light(),
+          AppTheme(
+            id: 'knight',
+            description: 'dark theme',
+            data: ThemeData(
+              scaffoldBackgroundColor: const Color(0xFF161616),
+              colorScheme: const ColorScheme.dark(),
+            ),
+          ),
+        ],
+        child: ThemeConsumer(
+          child: Builder(
+            builder: (themeContext) {
+              return MaterialApp(
+                theme: ThemeProvider.themeOf(themeContext).data,
+                title: 'Project Suva',
+                home: const ProgressBar(),
+                debugShowCheckedModeBanner: false,
+                scrollBehavior:
+                    const ScrollBehavior().copyWith(scrollbars: false),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
