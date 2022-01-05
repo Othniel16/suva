@@ -41,12 +41,16 @@ class _DockItemState extends State<DockItem> {
         textStyle:
             const TextStyle(color: Colors.grey, fontFamily: 'EBGarammond'),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: ThemeProvider.themeOf(context).id == 'knight'
+              ? const Color(0xFF161616)
+              : Colors.white,
           borderRadius: BorderRadius.circular(6.0),
           border: Border.all(color: Colors.grey.withOpacity(0.2)),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color: ThemeProvider.themeOf(context).id == 'knight'
+                  ? Colors.transparent
+                  : Colors.grey.withOpacity(0.1),
               offset: const Offset(0, 34),
               spreadRadius: 10.0,
               blurRadius: 20.0,
@@ -61,8 +65,8 @@ class _DockItemState extends State<DockItem> {
             transform: Matrix4.identity()..translate(0, hovering ? -15 : 0),
             duration: const Duration(milliseconds: 100),
             child: GlassContainer.frostedGlass(
-              height: size.height * 0.08,
-              width: size.height * 0.08,
+              height: size.height * 0.07,
+              width: size.height * 0.07,
               alignment: Alignment.center,
               borderColor: Colors.transparent,
               color: Colors.grey.withOpacity(.1),
