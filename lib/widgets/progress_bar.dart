@@ -57,6 +57,9 @@ class _ProgressBarState extends State<ProgressBar>
             slidingBeginOffset: const Offset(0, 0),
             fadingDuration: const Duration(milliseconds: 500),
             child: Splash(
+              splashColor: ThemeProvider.themeOf(context).id == 'knight'
+                  ? Colors.white
+                  : Colors.black,
               onTap: () {},
               child: const Dock(),
               minRadius: 30.0,
