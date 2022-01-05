@@ -10,7 +10,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final List<Widget> sections = const [
-    HeroSection(),
     AboutSection(),
     ProjectSection(),
     ContactSection(),
@@ -42,7 +41,7 @@ class _HomeState extends State<Home> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 30.0),
               child: Text(
-                DateTime.now().year.toString(),
+                'A.D. ${DateTime.now().year}',
                 style: const TextStyle(
                   color: Colors.grey,
                   fontFamily: 'Urbanist',

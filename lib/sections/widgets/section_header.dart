@@ -9,7 +9,9 @@ class SectionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: ThemeProvider.themeOf(context).id == 'knight'
+          ? Theme.of(context).canvasColor
+          : Colors.white,
       alignment: Alignment.center,
       height: MediaQuery.of(context).size.height,
       padding: const EdgeInsets.all(20.0),

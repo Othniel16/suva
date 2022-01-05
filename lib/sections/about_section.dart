@@ -33,22 +33,26 @@ class _AboutSectionState extends State<AboutSection>
 
   late Size size;
   late SectionProvider sectionProvider;
-  final List<SvgPicture> assets = [
-    SvgPicture.asset(Svgs.dart, color: Colors.black54),
-    SvgPicture.asset(Svgs.node, color: Colors.black54),
-    SvgPicture.asset(Svgs.python, color: Colors.black54),
-    SvgPicture.asset(Svgs.firebase, color: Colors.black54),
-    SvgPicture.asset(Svgs.flutter, color: Colors.black54),
-    SvgPicture.asset(Svgs.git, color: Colors.black54),
-    SvgPicture.asset(Svgs.mongodb, color: Colors.black54),
-    SvgPicture.asset(Svgs.mysql, color: Colors.black54),
-  ];
+  late List<SvgPicture> assets;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     size = MediaQuery.of(context).size;
     sectionProvider = Provider.of<SectionProvider>(context, listen: false);
+    Color imageColor = ThemeProvider.themeOf(context).id == 'knight'
+        ? Theme.of(context).canvasColor
+        : Colors.black54;
+    assets = [
+      SvgPicture.asset(Svgs.dart, color: imageColor),
+      SvgPicture.asset(Svgs.node, color: imageColor),
+      SvgPicture.asset(Svgs.python, color: imageColor),
+      SvgPicture.asset(Svgs.firebase, color: imageColor),
+      SvgPicture.asset(Svgs.flutter, color: imageColor),
+      SvgPicture.asset(Svgs.git, color: imageColor),
+      SvgPicture.asset(Svgs.mongodb, color: imageColor),
+      SvgPicture.asset(Svgs.mysql, color: imageColor),
+    ];
   }
 
   @override
@@ -123,7 +127,13 @@ class _AboutSectionState extends State<AboutSection>
                       ),
                       child: Row(
                         children: [
-                          const Text('Monsieur Magnus'),
+                          Text(
+                            'Monsieur Magnus',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1?.color,
+                            ),
+                          ),
                           const SizedBox(width: 8.0),
                           SvgPicture.asset(Svgs.wizard),
                         ],
