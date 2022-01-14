@@ -50,26 +50,61 @@ class _HomeState extends State<Home> {
               ResponsiveBuilder(builder: (context, sizingInformation) {
                 bool isMobile = sizingInformation.isMobile;
                 final TextStyle _textStyle = TextStyle(
-                  fontSize: isMobile ? 30.0 : 60.0,
                   letterSpacing: 2.0,
                   fontFamily: 'AbrilFatface',
+                  fontSize: isMobile ? 30.0 : 60.0,
                 );
+                final TextAlign _textAlign =
+                    isMobile ? TextAlign.center : TextAlign.start;
                 return Container(
                   height: 80.0,
                   margin: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: AnimatedTextKit(
                     repeatForever: true,
                     animatedTexts: [
-                      FadeAnimatedText('Portfolio, OTHNIEL USSHER',
-                          textStyle: _textStyle),
-                      FadeAnimatedText('Le portefeuille d\'OTHNIEL USSHER',
-                          textStyle: _textStyle),
-                      FadeAnimatedText('Cartera de OTHNIEL USSHER',
-                          textStyle: _textStyle),
-                      FadeAnimatedText('OTHNIEL USSHER 的投資組合',
-                          textStyle: _textStyle),
-                      FadeAnimatedText('Портфолио Отниэля Ашера',
-                          textStyle: _textStyle),
+                      isMobile
+                          ? FadeAnimatedText(
+                              'Portfolio, OTHNIEL USSHER',
+                              textStyle: _textStyle,
+                              textAlign: _textAlign,
+                            )
+                          : FadeAnimatedText(
+                              'Portfolio,\nOTHNIEL USSHER',
+                              textStyle: _textStyle,
+                            ),
+                      isMobile
+                          ? FadeAnimatedText(
+                              'Le portefeuille\nd\'OTHNIEL USSHER',
+                              textStyle: _textStyle,
+                              textAlign: _textAlign,
+                            )
+                          : FadeAnimatedText(
+                              'Le portefeuille d\'OTHNIEL USSHER',
+                              textStyle: _textStyle),
+                      isMobile
+                          ? FadeAnimatedText(
+                              'Cartera de\nOTHNIEL USSHER',
+                              textStyle: _textStyle,
+                              textAlign: _textAlign,
+                            )
+                          : FadeAnimatedText('Cartera de OTHNIEL USSHER',
+                              textStyle: _textStyle),
+                      isMobile
+                          ? FadeAnimatedText(
+                              'OTHNIEL USSHER\n的投資組合',
+                              textStyle: _textStyle,
+                              textAlign: _textAlign,
+                            )
+                          : FadeAnimatedText('OTHNIEL USSHER 的投資組合',
+                              textStyle: _textStyle),
+                      isMobile
+                          ? FadeAnimatedText(
+                              'Портфолио Отниэля\nАшера',
+                              textStyle: _textStyle,
+                              textAlign: _textAlign,
+                            )
+                          : FadeAnimatedText('Портфолио Отниэля Ашера',
+                              textStyle: _textStyle),
                       FadeAnimatedText('محفظة عثنييل أوشر',
                           textStyle: _textStyle),
                     ],
