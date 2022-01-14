@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:suva/exports.dart';
-import 'package:suva/widgets/dock.dart';
 import 'package:splash_tap/splash_tap.dart';
+import 'package:suva/exports.dart';
 
 class ProgressBar extends StatefulWidget {
   const ProgressBar({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class _ProgressBarState extends State<ProgressBar>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 1),
     )..addListener(() => setState(() {}));
     controller.forward();
   }
@@ -32,24 +31,30 @@ class _ProgressBarState extends State<ProgressBar>
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return controller.isAnimating
         ? Scaffold(
             backgroundColor: Colors.black,
             body: Center(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.15,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.horizontal(
-                    left: Radius.circular(20.0),
-                    right: Radius.circular(20.0),
-                  ),
-                  child: LinearProgressIndicator(
-                    minHeight: 4.0,
-                    value: controller.value,
-                    color: Colors.white,
-                    backgroundColor: Colors.grey[600],
-                  ),
-                ),
+              child: ResponsiveBuilder(
+                builder: (context, sizingInformation) {
+                  bool isMobile = sizingInformation.isMobile;
+                  return SizedBox(
+                    width: isMobile ? size.width * 0.4 : size.width * 0.15,
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.horizontal(
+                        left: Radius.circular(20.0),
+                        right: Radius.circular(20.0),
+                      ),
+                      child: LinearProgressIndicator(
+                        minHeight: 4.0,
+                        value: controller.value,
+                        color: Colors.white,
+                        backgroundColor: Colors.grey[600],
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           )
