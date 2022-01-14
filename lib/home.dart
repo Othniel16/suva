@@ -15,12 +15,6 @@ class _HomeState extends State<Home> {
     ContactSection(),
   ];
 
-  final TextStyle _textStyle = const TextStyle(
-    fontSize: 60.0,
-    letterSpacing: 2.0,
-    fontFamily: 'AbrilFatface',
-  );
-
   late Size size;
   late SectionProvider sectionProvider;
 
@@ -53,27 +47,35 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(),
-              Container(
-                height: 80.0,
-                margin: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: AnimatedTextKit(
-                  repeatForever: true,
-                  animatedTexts: [
-                    FadeAnimatedText('Portfolio, OTHNIEL USSHER',
-                        textStyle: _textStyle),
-                    FadeAnimatedText('Le portefeuille d\'OTHNIEL USSHER',
-                        textStyle: _textStyle),
-                    FadeAnimatedText('Cartera de OTHNIEL USSHER',
-                        textStyle: _textStyle),
-                    FadeAnimatedText('OTHNIEL USSHER 的投資組合',
-                        textStyle: _textStyle),
-                    FadeAnimatedText('Портфолио Отниэля Ашера',
-                        textStyle: _textStyle),
-                    FadeAnimatedText('محفظة عثنييل أوشر',
-                        textStyle: _textStyle),
-                  ],
-                ),
-              ),
+              ResponsiveBuilder(builder: (context, sizingInformation) {
+                bool isMobile = sizingInformation.isMobile;
+                final TextStyle _textStyle = TextStyle(
+                  fontSize: isMobile ? 30.0 : 60.0,
+                  letterSpacing: 2.0,
+                  fontFamily: 'AbrilFatface',
+                );
+                return Container(
+                  height: 80.0,
+                  margin: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: AnimatedTextKit(
+                    repeatForever: true,
+                    animatedTexts: [
+                      FadeAnimatedText('Portfolio, OTHNIEL USSHER',
+                          textStyle: _textStyle),
+                      FadeAnimatedText('Le portefeuille d\'OTHNIEL USSHER',
+                          textStyle: _textStyle),
+                      FadeAnimatedText('Cartera de OTHNIEL USSHER',
+                          textStyle: _textStyle),
+                      FadeAnimatedText('OTHNIEL USSHER 的投資組合',
+                          textStyle: _textStyle),
+                      FadeAnimatedText('Портфолио Отниэля Ашера',
+                          textStyle: _textStyle),
+                      FadeAnimatedText('محفظة عثنييل أوشر',
+                          textStyle: _textStyle),
+                    ],
+                  ),
+                );
+              }),
               Container(),
             ],
           ),
