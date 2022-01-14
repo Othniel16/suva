@@ -52,6 +52,9 @@ dependencies:
   # p
   provider: ^6.0.1
 
+  # r
+  responsive_builder: ^0.4.1
+
   # s
   splash_tap: ^0.1.2
 
