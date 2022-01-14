@@ -10,6 +10,7 @@ export 'package:advanced_icon/advanced_icon.dart';
 export 'package:theme_provider/theme_provider.dart';
 export 'package:delayed_display/delayed_display.dart';
 export 'package:animated_text_kit/animated_text_kit.dart';
+export 'package:responsive_builder/responsive_builder.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:concentric_transition/concentric_transition.dart';
 export 'package:linked_scroll_controller/linked_scroll_controller.dart';
