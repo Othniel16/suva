@@ -54,3 +54,17 @@ class _ProjectSectionState extends State<ProjectSection> {
     );
   }
 }
+
+class TestPaint extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint();
+
+    
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
