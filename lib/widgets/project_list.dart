@@ -32,22 +32,27 @@ class _ProjectListState extends State<ProjectList> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.symmetric(vertical: 50.0),
-      itemCount: projectInfos.length,
-      itemBuilder: (context, index) {
-        ProjectInfo info = projectInfos[index];
-        return HoverDetector(
-          transform: true,
-          builder: (isHover) {
-            return ProjectBox(
-              index: index + 1,
-              type: info.type,
-              name: info.name,
-              year: info.year,
-              color: info.color,
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) {
+        final bool isDesktop = sizingInformation.isDesktop;
+        return ListView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.symmetric(vertical: isDesktop ? 50.0 : 20.0),
+          itemCount: projectInfos.length,
+          itemBuilder: (context, index) {
+            ProjectInfo info = projectInfos[index];
+            return HoverDetector(
+              transform: true,
+              builder: (isHover) {
+                return ProjectBox(
+                  index: index + 1,
+                  type: info.type,
+                  name: info.name,
+                  year: info.year,
+                  color: info.color,
+                );
+              },
             );
           },
         );
