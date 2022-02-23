@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Doubles {}
+class Fonts {
+  static const String urbanist = 'Urbanist';
+  static const String ebGarammond = 'EBGaramond';
+  static const String abrilFatface = 'AbrilFatface';
+  static const  String euclidCircularB = 'Euclid Circular B';
+}
 
 class Strings {
   static String line1 =
@@ -25,6 +30,8 @@ class Images {
   static const String milan = imagesPath + 'milan.jpg';
   static const String monteCarlo = imagesPath + 'monteCarlo.jpg';
   static const String mumbai = imagesPath + 'mumbai.jpg';
+  static const String signUpCareers = imagesPath + 'sign-up-careers.jpeg';
+  static const String signUpRestaurant = imagesPath + 'sign-up-restaurant.jpeg';
 }
 
 class Svgs {
@@ -41,14 +48,24 @@ class Svgs {
 }
 
 class Palette {
-  static const Color green = Color(0xFF2E8664);
-  static const Color lightBlue = Color(0xFF0277bd);
-  static const Color red = Color(0xFFD10A24);
-  static const Color blue = Color(0xFF1D5192);
-  static const Color brown = Color(0xFF4C423E);
-  static const Color pink = Color(0xFFE57373);
-  static const Color navyBlue = Color(0xFF000080);
-  static const Color yellow = Color(0xFFF0D700);
+  // static const Color green = Color(0xFF2E8664);
+  // static const Color lightBlue = Color(0xFF0277bd);
+  // static const Color red = Color(0xFFD10A24);
+  // static const Color blue = Color(0xFF1D5192);
+  // static const Color brown = Color(0xFF4C423E);
+  // static const Color pink = Color(0xFFE57373);
+  // static const Color navyBlue = Color(0xFF000080);
+  // static const Color yellow = Color(0xFFF0D700);
+
+  static const Color green = Color(0xFF34DBAE);
+  static const Color puple = Color(0xFF8441CB);
+  static const Color brown = Color(0xFF5B3A2C);
+  static const Color pink = Color(0xFFFF7A9D);
+  static const Color red = Color(0xFFE20716);
+  static const Color yellow = Color(0xFFFFCC00);
+  static const Color hotPink = Color(0xFFFF0088);
+  static const Color blue = Color(0xFF1A3FA5);
+
 }
 
 class Urls {
