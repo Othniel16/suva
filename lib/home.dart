@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                 'A.D. ${DateTime.now().year}',
                 style: const TextStyle(
                   color: Colors.grey,
-                  fontFamily: 'Urbanist',
+                  fontFamily: Fonts.urbanist,
                 ),
               ),
             ),
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
                   bool isMobile = sizingInformation.isMobile;
                   final TextStyle _textStyle = TextStyle(
                     letterSpacing: 2.0,
-                    fontFamily: 'AbrilFatface',
+                    fontFamily: Fonts.abrilFatface,
                     fontSize: isMobile ? 30.0 : 60.0,
                   );
                   final TextAlign _textAlign =

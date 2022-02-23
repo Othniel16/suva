@@ -7,23 +7,6 @@ void main() {
 
 
 
-// SizedBox(
-//                     height: 60.0,
-//                     child: Marquee(
-//                       text: 'Some sample text that takes some space.',
-//                       style: TextStyle(fontWeight: FontWeight.bold),
-//                       scrollAxis: Axis.horizontal,
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       blankSpace: 20.0,
-//                       velocity: 50.0,
-//                       // pauseAfterRound: Duration(seconds: 1),
-//                       startPadding: 10.0,
-//                       accelerationDuration: const Duration(seconds: 1),
-//                       accelerationCurve: Curves.linear,
-//                       decelerationDuration: const Duration(milliseconds: 0),
-//                       decelerationCurve: Curves.easeOut,
-//                     ),
-//                   ),
 
 
 // AnalogClock(
