@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:suva/exports.dart';
+import 'package:suva/free_style/freestyle.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -33,7 +34,8 @@ class _AppState extends State<App> {
               return MaterialApp(
                 theme: ThemeProvider.themeOf(themeContext).data,
                 title: 'Project Suva',
-                home: const ProgressBar(),
+                // home: const ProgressBar(),
+                home: const FreeStyle(),
                 debugShowCheckedModeBanner: false,
                 scrollBehavior:
                     const ScrollBehavior().copyWith(scrollbars: false),
