@@ -1,6 +1,8 @@
 // pub
+export 'package:get/get.dart';
 export 'package:blobs/blobs.dart';
 export 'package:mailto/mailto.dart';
+export 'package:marquee/marquee.dart';
 export 'package:provider/provider.dart';
 export 'package:glass_kit/glass_kit.dart';
 export 'package:flutter_svg/flutter_svg.dart';
@@ -31,3 +33,6 @@ export 'package:suva/sections/about_section.dart';
 export 'package:suva/sections/contact_section.dart';
 export 'package:suva/sections/project_section.dart';
 export 'package:suva/sections/widgets/section_header.dart';
+
+// local - freestyle 
+export 'package:suva/free_style/widgets/project_card.dart';
