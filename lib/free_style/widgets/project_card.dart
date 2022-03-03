@@ -43,7 +43,7 @@ class _ProjectCardState extends State<ProjectCard> {
             height: isDesktop ? Get.height * 0.85 : Get.height * 0.75,
             child: AnimatedPadding(
               duration: const Duration(milliseconds: 000),
-              padding: EdgeInsets.symmetric(horizontal:  hovering ? 0 : 00),
+              padding: EdgeInsets.symmetric(horizontal: hovering ? 0 : 00),
               child: Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -57,8 +57,8 @@ class _ProjectCardState extends State<ProjectCard> {
                       width: isDesktop ? Get.width * 0.27 : Get.width * 0.95,
                       height: isDesktop ? Get.height * 0.85 : Get.height * 0.75,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
@@ -102,7 +102,6 @@ class _ProjectCardState extends State<ProjectCard> {
                           RotatedBox(
                             quarterTurns: 3,
                             child: AnimatedContainer(
-                              color: Colors.yellow,
                               height: hovering
                                   ? isDesktop
                                       ? Get.width * 0.07
@@ -150,8 +149,10 @@ class _ProjectCardState extends State<ProjectCard> {
                         controller: pageController,
                         physics: const NeverScrollableScrollPhysics(),
                         children: [
-                          Image.asset(Images.signUpRestaurant, fit: BoxFit.cover),
-                          Image.asset(Images.signUpRestaurant, fit: BoxFit.cover),
+                          Image.asset('assets/images/Slice 1.png',
+                              fit: BoxFit.cover),
+                          Image.asset('assets/images/Slice 2.png',
+                              fit: BoxFit.cover),
                         ],
                       ),
                     ),

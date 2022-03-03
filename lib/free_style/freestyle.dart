@@ -10,8 +10,8 @@ class FreeStyle extends StatefulWidget {
 
 class _FreeStyleState extends State<FreeStyle> {
   static var list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  var rightList = list.getRange(list.length ~/ 2, list.length).toList();
   var leftList = List.generate(list.length ~/ 2, (i) => list[i]);
+  var rightList = list.getRange(list.length ~/ 2, list.length).toList();
 
   @override
   Widget build(BuildContext context) {
