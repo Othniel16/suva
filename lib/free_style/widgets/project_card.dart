@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:suva/exports.dart';
 
 class ProjectCard extends StatefulWidget {
-  const ProjectCard({Key? key}) : super(key: key);
+  final Color hoverColor;
+  const ProjectCard({Key? key, required this.hoverColor}) : super(key: key);
 
   @override
   State<ProjectCard> createState() => _ProjectCardState();
@@ -53,7 +54,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     bottom: hovering ? -30 : 0,
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 100),
-                      color: hovering ? Palette.green : Colors.black,
+                      color: hovering ? widget.hoverColor : Colors.black,
                       width: isDesktop ? Get.width * 0.27 : Get.width * 0.95,
                       height: isDesktop ? Get.height * 0.85 : Get.height * 0.75,
                       child: Row(
