@@ -13,6 +13,22 @@ class _FreeStyleState extends State<FreeStyle> {
   var leftList = List.generate(list.length ~/ 2, (i) => list[i]);
   var rightList = list.getRange(list.length ~/ 2, list.length).toList();
 
+  List<Color> leftColors = [
+    Palette.red,
+    Palette.yellow,
+    Palette.hotPink,
+    Palette.blue,
+    Palette.purple,
+  ];
+
+  List<Color> rightColors = [
+    Palette.green,
+    Palette.purple,
+    Palette.brown,
+    Palette.pink,
+    Colors.black,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +39,8 @@ class _FreeStyleState extends State<FreeStyle> {
             clipBehavior: Clip.none,
             children: [
               Container(
-                alignment: Alignment.center,
                 width: Get.width,
+                alignment: Alignment.center,
                 child: ListView(
                   shrinkWrap: true,
                   children: [
@@ -41,11 +57,13 @@ class _FreeStyleState extends State<FreeStyle> {
                               spacing: 200,
                               runSpacing: 200,
                               children: [
-                                const ProjectCard(),
+                                ProjectCard(hoverColor: leftColors[index]),
                                 Padding(
                                   padding:
                                       EdgeInsets.only(top: isDesktop ? 200 : 0),
-                                  child: const ProjectCard(),
+                                  child: ProjectCard(
+                                    hoverColor: rightColors[index],
+                                  ),
                                 ),
                               ],
                             );
