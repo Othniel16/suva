@@ -58,7 +58,7 @@ class Palette {
   // static const Color yellow = Color(0xFFF0D700);
 
   static const Color green = Color(0xFF34DBAE);
-  static const Color puple = Color(0xFF8441CB);
+  static const Color purple = Color(0xFF8441CB);
   static const Color brown = Color(0xFF5B3A2C);
   static const Color pink = Color(0xFFFF7A9D);
   static const Color red = Color(0xFFE20716);
